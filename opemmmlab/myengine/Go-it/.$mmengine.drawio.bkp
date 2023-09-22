@@ -1,0 +1,112 @@
+<mxfile host="Electron" modified="2023-09-01T10:40:28.688Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.1 Chrome/112.0.5615.204 Electron/24.6.1 Safari/537.36" etag="ZjU1oIVrIclCnpwxw2ED" version="21.6.1" type="device">
+  <diagram name="第 1 页" id="xlU4EctzSdcZeAniLkPW">
+    <mxGraphModel dx="1195" dy="1872" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="-150" width="1170" height="880" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-2" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="10" y="70" as="sourcePoint" />
+            <mxPoint x="60" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-3" value="trian.py&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry y="38" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-7" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="105" y="-120" width="415" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-6" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="-90" width="200" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-8" value="Runner" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="277.5" y="-120" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-9" value="_train_loop" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="-60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-10" value="train" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="180" y="-90" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-11" value="Runnerd读取配置文件的各个组件并未实例化，仍是字典" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="147.5" y="-150" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-12" value="optim_wrapper" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="23" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="-430" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-16" value="optim_wrapper" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="175" y="-440" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-17" value="1.如果是Optimizer对象，则由OPTIM_WRAPPERS进行构建" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="-390" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-18" value="2.如果是dict且含有constructor字段，则由build_optim_wrapper进行构建" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="-290" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.321;exitY=1.004;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" edge="1" parent="1" source="JP1C0DZdPH4XbnEmepRd-15" target="JP1C0DZdPH4XbnEmepRd-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="-60" as="sourcePoint" />
+            <mxPoint x="610" y="-110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-21" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="115" y="-690" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-22" value="optim_wrapper_constructor" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="140" y="-690" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-26" value="1.使用注册器的字典，获取对应的类&lt;br&gt;2.构建对象，即类(**args),args是从配置文件读取的组件参数" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="890" width="300" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-27" value="build_from_cfg" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="160" y="890" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-28" value="1.构建optim_wrapper_constructor" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="117.5" y="-660" width="225" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-29" value="2.构建optimizer" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="118.75" y="-600" width="222.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-30" value="3.构建optim_wrapper" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="118.75" y="-540" width="221.25" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-33" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="JP1C0DZdPH4XbnEmepRd-21" target="JP1C0DZdPH4XbnEmepRd-18">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="-380" as="sourcePoint" />
+            <mxPoint x="30" y="-260" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="40" y="-350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-36" value="" style="edgeStyle=elbowEdgeStyle;elbow=horizontal;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.996;entryY=0.569;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="JP1C0DZdPH4XbnEmepRd-28" target="JP1C0DZdPH4XbnEmepRd-29">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="-500" as="sourcePoint" />
+            <mxPoint x="450" y="-550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="380" y="-600" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-39" value="" style="edgeStyle=elbowEdgeStyle;elbow=vertical;endArrow=classic;html=1;curved=0;rounded=0;endSize=8;startSize=8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="JP1C0DZdPH4XbnEmepRd-30">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="380" y="-570" as="sourcePoint" />
+            <mxPoint x="450" y="-550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="410" y="-510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JP1C0DZdPH4XbnEmepRd-40" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;call(model),构建优化器需传入模型，以便将参数纳入优化器&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="285" y="-590" width="230" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

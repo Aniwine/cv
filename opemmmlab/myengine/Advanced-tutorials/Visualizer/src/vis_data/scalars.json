@@ -1,0 +1,5 @@
+{"loss": 0.2, "step": 0}
+{"loss": 0.1, "step": 1}
+{"acc": 0.7, "step": 0}
+{"acc": 0.8, "step": 1}
+{"loss": 0.3, "acc": 0.8, "step": 3}

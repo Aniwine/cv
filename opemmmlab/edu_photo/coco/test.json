@@ -1,0 +1,193 @@
+{
+    "images": [
+        {
+            "file_name": "1731678165890_.pic_hd.jpg",
+            "height": 1920,
+            "width": 1080,
+            "id": 4
+        },
+        {
+            "file_name": "1721678165761_.pic_hd.jpg",
+            "height": 1920,
+            "width": 1080,
+            "id": 7
+        }
+    ],
+    "type": "instances",
+    "annotations": [
+        {
+            "area": 6873,
+            "iscrowd": 0,
+            "image_id": 4,
+            "bbox": [
+                420,
+                655,
+                87,
+                79
+            ],
+            "category_id": 0,
+            "id": 9,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "area": 800,
+            "iscrowd": 0,
+            "image_id": 4,
+            "bbox": [
+                452,
+                1189,
+                32,
+                25
+            ],
+            "category_id": 1,
+            "id": 10,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "area": 3944,
+            "iscrowd": 0,
+            "image_id": 7,
+            "bbox": [
+                469,
+                433,
+                68,
+                58
+            ],
+            "category_id": 0,
+            "id": 24,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "area": 9810,
+            "iscrowd": 0,
+            "image_id": 7,
+            "bbox": [
+                472,
+                840,
+                109,
+                90
+            ],
+            "category_id": 0,
+            "id": 25,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "area": 5280,
+            "iscrowd": 0,
+            "image_id": 7,
+            "bbox": [
+                479,
+                1268,
+                66,
+                80
+            ],
+            "category_id": 0,
+            "id": 26,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "area": 3599,
+            "iscrowd": 0,
+            "image_id": 7,
+            "bbox": [
+                991,
+                489,
+                61,
+                59
+            ],
+            "category_id": 0,
+            "id": 27,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "area": 4355,
+            "iscrowd": 0,
+            "image_id": 7,
+            "bbox": [
+                997,
+                1033,
+                67,
+                65
+            ],
+            "category_id": 0,
+            "id": 28,
+            "ignore": 0,
+            "segmentation": []
+        },
+        {
+            "area": 4680,
+            "iscrowd": 0,
+            "image_id": 7,
+            "bbox": [
+                1007,
+                1534,
+                60,
+                78
+            ],
+            "category_id": 0,
+            "id": 29,
+            "ignore": 0,
+            "segmentation": []
+        }
+    ],
+    "categories": [
+        {
+            "supercategory": "none",
+            "id": 0,
+            "name": "right"
+        },
+        {
+            "supercategory": "none",
+            "id": 1,
+            "name": "backslash"
+        },
+        {
+            "supercategory": "none",
+            "id": 2,
+            "name": "wrong"
+        },
+        {
+            "supercategory": "none",
+            "id": 3,
+            "name": "half"
+        },
+        {
+            "supercategory": "none",
+            "id": 4,
+            "name": "bias"
+        },
+        {
+            "supercategory": "none",
+            "id": 5,
+            "name": "questionMark"
+        },
+        {
+            "supercategory": "none",
+            "id": 6,
+            "name": "remark"
+        },
+        {
+            "supercategory": "none",
+            "id": 7,
+            "name": "circle"
+        },
+        {
+            "supercategory": "none",
+            "id": 8,
+            "name": "wavyLine"
+        },
+        {
+            "supercategory": "none",
+            "id": 9,
+            "name": "underline"
+        }
+    ],
+    "info": [],
+    "licenses": []
+}

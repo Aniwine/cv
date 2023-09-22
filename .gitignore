@@ -1,0 +1,7 @@
+mmyolo_edu_photo/
+ultralytics_edu_photo/
+**/data/
+**/work_dir/
+**/exp/
+wzm-image-processing
+opemmmlab/mmyolo
