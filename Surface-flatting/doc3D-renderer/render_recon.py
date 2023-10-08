@@ -120,9 +120,9 @@ rridx=sys.argv[-3]
 strt=int(sys.argv[-2])
 end=int(sys.argv[-1])
 
-blend_list = './blendlists/blendlist{}.csv'.format(rridx)
-texpath = './recon_tex/chess48.png'
-path_to_output_alb = './recon/{}/'.format(rridx)
+blend_list = r'D:\project\image_process\Surface-flatting\doc3D-renderer/blendlists/blendlist{}.csv'.format(rridx)
+texpath = r'D:\project\image_process\Surface-flatting\doc3D-renderer/recon_tex/chess48.png'
+path_to_output_alb = r'D:\project\image_process\Surface-flatting\doc3D-renderer/recon/{}/'.format(rridx)
 
 if not os.path.exists(path_to_output_alb):
     os.makedirs(path_to_output_alb)

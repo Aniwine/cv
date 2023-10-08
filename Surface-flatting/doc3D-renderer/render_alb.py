@@ -29,9 +29,9 @@ def select_object(ob):
 
 def prepare_rendersettings():
     bpy.ops.object.select_all(action='DESELECT')
-    bpy.data.scenes['Scene'].cycles.device='CPU'
-    bpy.data.scenes['Scene'].render.resolution_x=448
-    bpy.data.scenes['Scene'].render.resolution_y=448
+    bpy.data.scenes['Scene'].cycles.device='GPU'
+    bpy.data.scenes['Scene'].render.resolution_x=1280
+    bpy.data.scenes['Scene'].render.resolution_y=1280
     bpy.data.scenes['Scene'].render.resolution_percentage=100
 
 
@@ -88,8 +88,8 @@ def prepare_no_env_render():
 rridx=sys.argv[-3]
 strt=int(sys.argv[-2])
 end=int(sys.argv[-1])
-path_to_output_alb = './alb/'+ str(rridx) + '/'
-blend_list = './blendlists/blendlist'+ str(rridx) +'.csv'
+path_to_output_alb = r'D:\project\image_process\Surface-flatting\doc3D-renderer\alb'+ str(rridx) + '/'
+blend_list = r'D:\project\image_process\Surface-flatting\doc3D-renderer\blendlists\blendlist'+ str(rridx) +'.csv'
 
 if not os.path.exists(path_to_output_alb):
     os.makedirs(path_to_output_alb)

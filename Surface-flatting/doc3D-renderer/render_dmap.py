@@ -79,8 +79,8 @@ def get_depth_map(img_name):
 strt=int(sys.argv[-2])
 end=int(sys.argv[-1])
 rridx=sys.argv[-3]
-path_to_output_dmap = './dmap/{}/'.format(rridx)
-blend_list = './blendlists/blendlist{}.csv'.format(rridx)
+path_to_output_dmap = r'D:\project\image_process\Surface-flatting\doc3D-renderer/dmap/{}/'.format(rridx)
+blend_list = r'D:\project\image_process\Surface-flatting\doc3D-renderer/blendlists/blendlist{}.csv'.format(rridx)
 
 if not os.path.exists(path_to_output_dmap):
     os.makedirs(path_to_output_dmap)

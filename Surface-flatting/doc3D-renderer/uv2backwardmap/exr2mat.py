@@ -9,6 +9,9 @@ Written by: Sagnik Das
 Stony Brook University, New York
 January 2019
 '''
+import os
+os.environ["OPENCV_IO_ENABLE_OPENEXR"]="1"
+
 import sys
 import cv2
 import numpy as np
@@ -20,12 +23,11 @@ def saveasmat(file_path, dst_path):
     img = cv2.imread(file_path, cv2.IMREAD_ANYDEPTH | cv2.IMREAD_UNCHANGED)
     savemat(dst_path, {'uv': img})
     
-import os
-import multiprocessing
-pool = multiprocessing.Pool(processes=2)
+# import multiprocessing
+# pool = multiprocessing.Pool(processes=1)
 
-src_dir = '../uv/{}/'.format(rridx)
-dst_dir = '../uvmat/{}/'.format(rridx)
+src_dir = r'D:\project\image_process\Surface-flatting\doc3D-renderer\uv/{}/'.format(rridx)
+dst_dir = r'D:\project\image_process\Surface-flatting\doc3D-renderer\uv/uvmat/{}/'.format(rridx)
 
 if not os.path.exists(dst_dir):
     os.makedirs(dst_dir)
@@ -40,7 +42,8 @@ for fname in os.listdir(src_dir):
         if not os.path.exists(t):
             os.makedirs(t)
         dst_name = os.path.join(t, fname[:-4])
-        pool.apply_async(saveasmat, (file_name, dst_name))
+        # pool.apply_async(saveasmat, (file_name, dst_name))
+        saveasmat(file_name, dst_name)
 
-pool.close()
-pool.join()
+# pool.close()
+# pool.join()

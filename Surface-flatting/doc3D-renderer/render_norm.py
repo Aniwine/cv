@@ -110,8 +110,8 @@ strt=int(sys.argv[-2])
 end=int(sys.argv[-1])
 rridx=sys.argv[-3]
 
-blend_list = './blendlists/blendlist{}.csv'.format(rridx)
-path_to_output_norms= './norm/{}/'.format(rridx)
+blend_list = r'D:\project\image_process\Surface-flatting\doc3D-renderer\blendlists/blendlist{}.csv'.format(rridx)
+path_to_output_norms= r'D:\project\image_process\Surface-flatting\doc3D-renderer/norm/{}/'.format(rridx)
 
 if not os.path.exists(path_to_output_norms):
     os.makedirs(path_to_output_norms)

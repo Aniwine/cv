@@ -34,6 +34,7 @@ def reset_blend():
     bpy.ops.wm.read_factory_settings()
     bpy.context.scene.cursor_location = (0.0, 0.0, 0.0)
 
+
     # only worry about data in the startup scene
     for bpy_data_iter in (
             bpy.data.meshes,
@@ -98,9 +99,9 @@ def prepare_scene():
 
 def prepare_rendersettings():
     bpy.ops.object.select_all(action='DESELECT')
-    bpy.data.scenes['Scene'].cycles.device='CPU'
-    bpy.data.scenes['Scene'].render.resolution_x=448
-    bpy.data.scenes['Scene'].render.resolution_y=448
+    bpy.data.scenes['Scene'].cycles.device='GPU'
+    bpy.data.scenes['Scene'].render.resolution_x=640
+    bpy.data.scenes['Scene'].render.resolution_y=640
     bpy.data.scenes['Scene'].render.resolution_percentage=100
 
 def position_object(mesh_name):
@@ -123,7 +124,8 @@ def add_lighting():
         else:
             wnodes.remove(node)
     # hdr world lighting
-    if random.random() > 0.3:
+    #TOTO 将概率改为1，让渲染一直用hdr，默认值为0.3
+    if random.random() > 0:
         texcoord = wnodes.new(type='ShaderNodeTexCoord')
         mapping = wnodes.new(type='ShaderNodeMapping')
         mapping.rotation[2] = random.uniform(0, 6.28)
@@ -216,12 +218,17 @@ def reset_camera(mesh):
     # focal length
     bpy.data.cameras['Camera'].lens = random.randint(25, 35)
     # cam position
-    d = random.uniform(2.3, 3.3)
-    campos = Vector((0, d, 0))
+    #TOTO
+    # d = random.uniform(2.3, 3.3)
+    # campos = Vector((0, d, 0))
+    #TOTO
+    d=2.3
+    campos = Vector((0, 0, d))
     eul = Euler((0, 0, 0), 'XYZ')
-    eul.rotate_axis('Z', random.uniform(0, 3.1415))
-    eul.rotate_axis('X', random.uniform(math.radians(60), math.radians(120)))
-    
+    #TOTO
+    # eul.rotate_axis('Z', random.uniform(0, 3.1415))
+    # eul.rotate_axis('X', random.uniform(math.radians(60), math.radians(120)))
+    #TOTO
     campos.rotate(eul)
     camera.location=campos
 
@@ -231,11 +238,13 @@ def reset_camera(mesh):
         lookat = Vector((random.uniform(-st, st), random.uniform(-st, st), 0))
         eul = Euler((0, 0, 0), 'XYZ')
         
-        eul.rotate_axis('X', math.atan2(lookat.y - campos.y, campos.z))
-        eul.rotate_axis('Y', math.atan2(campos.x - lookat.x, campos.z))
-        st = (d - 2.3) / 1.0 * 15 + 5.
-        eul.rotate_axis('Z', random.uniform(math.radians(-90 - st), math.radians(-90 + st)))
-        
+        #TOTO
+        # eul.rotate_axis('X', math.atan2(lookat.y - campos.y, campos.z))
+        # eul.rotate_axis('Y', math.atan2(campos.x - lookat.x, campos.z))
+        # st = (d - 2.3) / 1.0 * 15 + 5.
+        # eul.rotate_axis('Z', random.uniform(math.radians(-90 - st), math.radians(-90 + st)))
+        #TOTO
+
         camera.rotation_euler = eul
         bpy.context.scene.update()
 
@@ -369,8 +378,13 @@ def prepare_no_env_render():
 def render_pass(obj, objpath, texpath):
     # change output image name to obj file name + texture name + random three
     # characters (upper lower alphabet and digits)
-    fn = objpath.split('/')[-1][:-4] + '-' + texpath.split('/')[-1][:-4] + '-' + \
+    import os
+
+    fn=os.path.basename(objpath)[:-4]+'-'+os.path.basename(texpath)[:-4]+'-'+ \
         ''.join(random.sample(string.ascii_letters + string.digits, 3))
+
+    # fn = objpath.split('/')[-1][:-4] + '-' + texpath.split('/')[-1][:-4] + '-' + \
+    #     ''.join(random.sample(string.ascii_letters + string.digits, 3))
 
     scene=bpy.data.scenes['Scene']
     scene.render.layers['RenderLayer'].use_pass_uv=True
@@ -391,7 +405,7 @@ def render_pass(obj, objpath, texpath):
     file_output_node_img.file_slots[0].path = fn
     imglk = links.new(render_layers.outputs[0], file_output_node_img.inputs[0])
     scene.cycles.samples=128
-    bpy.ops.render.render(write_still=False)
+    bpy.ops.render.render(write_still=True)
 
     # save_blend_file
     if save_blend_file:
@@ -410,12 +424,12 @@ def render_pass(obj, objpath, texpath):
     file_output_node_uv.file_slots[0].path = fn
     uvlk = links.new(render_layers.outputs[4], file_output_node_uv.inputs[0])
     scene.cycles.samples = 1
-    bpy.ops.render.render(write_still=False)
+    bpy.ops.render.render(write_still=True)
 
     # render world coordinates
     color_wc_material(obj,'wcColor')
     get_worldcoord_img(fn)
-    bpy.ops.render.render(write_still=False)
+    bpy.ops.render.render(write_still=True)
 
     return fn
 
@@ -425,12 +439,15 @@ def render_img(objpath, texpath):
     bpy.ops.import_scene.obj(filepath=objpath)
     mesh_name=bpy.data.meshes[0].name
     mesh=position_object(mesh_name)
+    #TOTO增大网格
+    mesh.scale=(2.0,2.0,2.0)
+    #TOTO
     add_lighting()
     v = reset_camera(mesh)
     if not v:
         return 1
     else:
-        #add texture
+        #add textureid1
         page_texturing(mesh, texpath)
         fn = render_pass(mesh, objpath, texpath)
 
@@ -439,11 +456,11 @@ id1 = int(sys.argv[-2])
 id2 = int(sys.argv[-1])
 rridx = int(sys.argv[-3])
 
-path_to_output_images='./img/{}/'.format(rridx)
-path_to_output_uv = './uv/{}/'.format(rridx)
-path_to_output_wc = './wc/{}/'.format(rridx)
+path_to_output_images='D:\project\image_process\Surface-flatting\doc3D-renderer\img/{}/'.format(rridx)
+path_to_output_uv = 'D:\project\image_process\Surface-flatting\doc3D-renderer/uv/{}/'.format(rridx)
+path_to_output_wc = 'D:\project\image_process\Surface-flatting\doc3D-renderer/wc/{}/'.format(rridx)
 if save_blend_file:
-    path_to_output_blends='./bld/{}/'.format(rridx)
+    path_to_output_blends='D:\project\image_process\Surface-flatting\doc3D-renderer/bld/{}/'.format(rridx)
 
 for fd in [path_to_output_images, path_to_output_uv, path_to_output_wc, path_to_output_blends]:
     if not os.path.exists(fd):
@@ -464,7 +481,7 @@ with open(tex_list, 'r') as t, open(obj_list, 'r') as m:
     for k in range(id1, id2):
         #print(k)
         objpath = objlist[k][0]
-        idx = random.randint(0, len(texlist))
+        idx = random.randint(0, len(texlist)-1)
         texpath=texlist[idx][0]
         print(objpath)
         print(texpath)
